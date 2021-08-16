@@ -1,0 +1,2257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>mailutility.mailmonitor API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>mailutility.mailmonitor</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># -*- coding:utf-8 -*-
+import imaplib
+import email
+import getpass
+import chardet
+import sys
+import traceback
+import socket
+import atexit
+import warnings
+
+from time import sleep, time
+from pathlib import Path
+from typing import Union, List
+from datetime import datetime
+import threading
+
+
+class MailException(Exception):
+    &#34;&#34;&#34; Any kind of mail error &#34;&#34;&#34;
+
+    def __init__(self, msg: str = None):
+        self.message = msg or &#34;There is a problem with the mails...&#34;
+        super().__init__(self.message)
+
+    def __str__(self):
+        return self.message
+
+
+def get_datetime_now(fmt: str = &#34;%d%m%Y %H:%M:%S&#34;) -&gt; str:
+    &#34;&#34;&#34;
+
+    Parameters
+    ----------
+    fmt: str
+         The date format to use (Default value = &#34;%d%m%Y %H:%M:%S&#34;)
+
+    Returns
+    -------
+    str
+
+    &#34;&#34;&#34;
+
+    date = datetime.now()
+    return date.strftime(fmt)
+
+
+# noinspection PyBroadException, PyUnresolvedReferences
+def persist_file(filepath: &#34;TransparentPath&#34;, part) -&gt; None:
+    &#34;&#34;&#34;
+
+    Parameters
+    ----------
+    filepath: TransparentPath
+
+    part:
+
+
+    Returns
+    -------
+    None
+
+    &#34;&#34;&#34;
+    data = part.get_payload(decode=True)
+    filepath.write_bytes(data)
+    print(f&#34;SAVING FILE to : {filepath}.&#34;)
+
+
+# noinspection PyUnresolvedReferences
+def rename_file(
+    filename, to_path: Union[str, Path, &#34;TransparentPath&#34;], overwrite: bool = True
+) -&gt; Union[Path, &#34;TransparentPath&#34;]:
+    &#34;&#34;&#34;
+
+    Parameters
+    ----------
+    filename: str
+
+    to_path: Union[str, Path, &#34;TransparentPath&#34;]
+
+    overwrite: bool
+        If True, will overwrite any file with the same name. Else rename it
+        appending to now&#39;s datetime.
+
+
+    Returns
+    -------
+    Union[str, Path, &#34;TransparentPath&#34;]
+
+    &#34;&#34;&#34;
+    date_ref = datetime.today()
+
+    try:
+        filepath = to_path / filename
+    except TypeError:
+        to_path = Path(to_path)
+        filepath = to_path / filename
+    ext = filepath.suffix
+    if filepath.is_file() and overwrite is False:
+        filepath = type(to_path)(f&#34;{to_path / filepath.stem}_{date_ref}{ext}&#34;)
+    return filepath
+
+
+# noinspection PyUnresolvedReferences
+def save_attachment(part, to_path: Union[&#34;TransparentPath&#34;, Path, str], overwrite: bool = True) -&gt; None:
+    &#34;&#34;&#34;
+
+    Parameters
+    ----------
+    part:
+
+    to_path: Union[TransparentPath, Path, str]
+        The directory to save the file in
+
+    overwrite: bool
+        If True, will overwrite any file with the same name. Else rename it
+        appending to now&#39;s datetime.
+
+
+    Returns
+    -------
+    None
+
+    &#34;&#34;&#34;
+    if part.get(&#34;Content-Disposition&#34;) is None:
+        return
+
+    if part.get_content_maintype() != &#34;multipart&#34;:
+        name = part.get_filename()
+        if not name:
+            raise ValueError(f&#34;No file name in part {part}!&#34;)
+        name = name.replace(&#34;\r&#34;, &#34;&#34;).replace(&#34;\n&#34;, &#34;&#34;)
+        filepath = rename_file(name, to_path, overwrite)
+        persist_file(filepath, part)
+
+
+def split_spec_char(s):
+    trimmed_s = s.encode(&#34;ascii&#34;, errors=&#34;ignore&#34;).decode(&#34;ascii&#34;)
+    spec_chars = set([c for c in s if c not in trimmed_s])
+    out = [&#34;&#34;]
+    for c in s:
+        if c not in spec_chars:
+            out[-1] += c
+        else:
+            out.append(&#34;&#34;)
+    return [o for o in out if o != &#34;&#34;]
+
+
+class MailMonitor(object):
+    &#34;&#34;&#34;Class allowing to monitor a mailbox to save attachments to a
+    directory using conditions on sender and subjet.
+
+    If two-factor auth is activated, you will need to
+    provide  an app password instead of your regular password. If you do not
+    have one or do not remember it, make a new one by following the
+    instructions here (only valid for office365 acconuts):
+    https://docs.microsoft.com/fr-fr/azure/active-directory/user-help/
+    multi-factor-authentication-end-user-app-passwords
+
+    The relevant security page to set the app passwords :
+    https://account.activedirectory.windowsazure.com/Proofup.aspx
+
+    MailMonitor will use threading to allow for the monitoring of
+    different conditions and saving to different paths.
+
+    For a basic usage (monitoring one set of conditions and saving to one
+    location) :
+
+    &gt;&gt;&gt; from mailutility import MailMonitor  # doctest: +SKIP
+    &gt;&gt;&gt; mail = MailMonitor(&#34;username&#34;)  # doctest: +SKIP
+    &gt;&gt;&gt; mail.monitor(  # doctest: +SKIP
+    &gt;&gt;&gt;     conditions={&#34;subject&#34;: &#34;test&#34;,  # doctest: +SKIP
+    &gt;&gt;&gt;                 &#34;sender&#34;: &#34;cottephi@gmail.com&#34;},  # doctest: +SKIP
+    &gt;&gt;&gt;     to_path=&#34;/home/username/Bureau&#34;,  # doctest: +SKIP
+    &gt;&gt;&gt;     time_to_sleep=5  # doctest: +SKIP
+    &gt;&gt;&gt; )  # doctest: +SKIP
+
+    To monitor several sources and save to different paths, use :
+
+    &gt;&gt;&gt; mail.monitor(  # doctest: +SKIP
+    &gt;&gt;&gt;     conditions=[{&#34;sender&#34;: &#34;a@b.c&#34;, &#34;subject&#34;: &#34;g&#34;}, {&#34;sender&#34;: &#34;d@e.f&#34;, &#34;subject&#34;: &#34;h&#34;}],  # doctest: +SKIP
+    &gt;&gt;&gt;     to_path=[&#34;/home/username/Desktop&#34;, &#34;/home/username/Documents&#34;],  # doctest: +SKIP
+    &gt;&gt;&gt;     time_to_sleep=5,  # doctest: +SKIP
+    &gt;&gt;&gt; )
+
+    You can decide to save to GCS by using TransparentPath:
+
+    &gt;&gt;&gt; # noinspection PyShadowingNames, PyUnresolvedReferences
+    &gt;&gt;&gt; from transparentpath import TransparentPath as Path  # doctest: +SKIP
+    &gt;&gt;&gt; Path.set_global_fs(&#34;gcs&#34;, bucket=&#34;my_bucket&#34;, project=&#34;my_project&#34;)  # doctest: +SKIP
+    &gt;&gt;&gt; mail = MailMonitor(&#34;tomonitor@mailbox.com&#34;)  # doctest: +SKIP
+    &gt;&gt;&gt; mail.monitor(  # doctest: +SKIP
+    &gt;&gt;&gt;     conditions={&#34;subject&#34;: &#34;test&#34;,  # doctest: +SKIP
+    &gt;&gt;&gt;                 &#34;sender&#34;: &#34;chient@chat.com&#34;},  # doctest: +SKIP
+    &gt;&gt;&gt;     to_path=Path(&#34;attachment&#34;),   # doctest: +SKIP
+    &gt;&gt;&gt;     time_to_sleep=5  # doctest: +SKIP
+    &gt;&gt;&gt; )  # doctest: +SKIP
+
+    If conditions is an empty dict, will save attachments of all incoming
+    mails.
+
+    Any email triggering the monitor will be marked as SEEN.
+
+    Notes and warnings:
+
+        1. Even though multiprocessing is used, any code written after the
+        call to mail.monitor will not be executed until the monitoring ends.
+
+        2. The file saving system tends to see mail signature as attachments,
+        you will have to delete the files yourself, or ignore them in your
+        analysis.
+    &#34;&#34;&#34;
+
+    accepted_conditions = [&#34;sender&#34;, &#34;subject&#34;, &#34;subject_exact&#34;]
+    instances = []
+    default_mail = &#34;&#34;
+    logger = None
+
+    def __init__(
+            self,
+            username: str = None,
+            token: str = None,
+            port: int = 993,
+            hostname: str = &#34;outlook.office365.com&#34;,
+            connect: bool = False,
+            overwrite: bool = True,
+    ):
+
+        if username is None:
+            username = input(&#34;User name:\n&#34;)
+        if token is None:
+            token = getpass.getpass(f&#34;Password for {username}:&#34;)
+        if &#34;@&#34; not in username:
+            username = f&#34;{username}@{MailMonitor.default_mail}&#34;
+
+        self.username = username
+        self.token = token
+        self.port = port
+        self.hostname = hostname
+        self.mailbox = None
+        self.exit = False
+        self.overwrite = overwrite
+        if connect:
+            self.open_connection()
+        MailMonitor.instances.append(self)
+
+    def open_connection(self):
+        &#34;&#34;&#34; &#34;&#34;&#34;
+        # Connection to the server
+        talk = False
+        if self.mailbox is None:
+            print(f&#34;Connecting to {self.hostname} as {self.username}...&#34;)
+            talk = True
+        attempts = 0
+        while True:
+            attempts += 1
+            try:
+                self.mailbox = imaplib.IMAP4_SSL(self.hostname, self.port)
+                # Login to your account
+                self.mailbox.login(self.username, self.token)
+                self.mailbox.select()
+                if talk:
+                    print(&#34;...successful&#34;)
+                break
+            except socket.gaierror as e:
+                print(f&#34;Failed more than {attempts} times. Raising the exception.&#34;)
+                if attempts &gt; 60:
+                    raise e
+                else:
+                    print(f&#34;Failed. Retrying for the {attempts}th time...&#34;)
+                    sleep(1)
+
+    @staticmethod
+    def configure_date(date: Union[str, datetime]) -&gt; str:
+        &#34;&#34;&#34;
+        Converts datetime format to mail date format
+
+        &gt; https://datatracker.ietf.org/doc/html/rfc3501 page 84/85
+
+        Parameters
+        ----------
+        date : Union[str, datetime]
+            date to convert
+
+        Returns
+        -------
+        str
+            converted date
+        &#34;&#34;&#34;
+        if isinstance(date, str):
+            date = datetime.strptime(date, &#34;%Y-%m-%d&#34;)
+        m_dict = {&#34;01&#34;: &#34;Jan&#34;, &#34;02&#34;: &#34;Feb&#34;, &#34;03&#34;: &#34;Mar&#34;, &#34;04&#34;: &#34;Apr&#34;, &#34;05&#34;: &#34;May&#34;, &#34;06&#34;: &#34;Jun&#34;, &#34;07&#34;: &#34;Jul&#34;,
+                  &#34;08&#34;: &#34;Aug&#34;, &#34;09&#34;: &#34;Sep&#34;, &#34;10&#34;: &#34;Oct&#34;, &#34;11&#34;: &#34;Nov&#34;, &#34;12&#34;: &#34;Dec&#34;}
+        if len(str(date.month)) == 1:
+            m = &#34;0&#34; + str(date.month)
+        else:
+            m = str(date.month)
+        mv = m_dict[m]
+        return str(date.day) + &#34;-&#34; + mv + &#34;-&#34; + str(date.year)
+
+    @staticmethod
+    def read_date(date: str) -&gt; datetime.date:
+        &#34;&#34;&#34;
+        convert date from mail format for datetime
+
+        &gt; https://datatracker.ietf.org/doc/html/rfc3501 page 84/85
+
+        Parameters
+        ----------
+        date : str
+            mail format
+
+        Returns
+        -------
+        datetime.date
+        &#34;&#34;&#34;
+        m_dict = {&#34;01&#34;: &#34;Jan&#34;, &#34;02&#34;: &#34;Feb&#34;, &#34;03&#34;: &#34;Mar&#34;, &#34;04&#34;: &#34;Apr&#34;, &#34;05&#34;: &#34;May&#34;, &#34;06&#34;: &#34;Jun&#34;, &#34;07&#34;: &#34;Jul&#34;,
+                  &#34;08&#34;: &#34;Aug&#34;, &#34;09&#34;: &#34;Sep&#34;, &#34;10&#34;: &#34;Oct&#34;, &#34;11&#34;: &#34;Nov&#34;, &#34;12&#34;: &#34;Dec&#34;}
+        day = date[:2]
+        m_dict = {i: j for i, j in zip(m_dict.values(), m_dict.keys())}
+        month = m_dict[date[3:6]]
+        year = date[7:11]
+        date = datetime.strptime(year + &#34;-&#34; + month + &#34;-&#34; + day, &#34;%Y-%m-%d&#34;)
+        return date.date()
+
+    def monitor(
+            self,
+            conditions: Union[dict, List[dict]],
+            to_path: Union[Union[&#34;TransparentPath&#34;, Path, str], List[Union[&#34;TransparentPath&#34;, Path, str]]],
+            time_to_sleep: Union[int, List[int]] = 60,
+            mailbox: Union[str, List[str]] = &#34;INBOX&#34;,
+            overwrite: Union[bool, List[bool]] = None,
+            timeout: int = None,
+    ) -&gt; None:
+        &#34;&#34;&#34;
+
+        Parameters
+        ----------
+        conditions: Union[dict, List[dict]]
+            The list of patterns to match for the mail to trigger. The keys
+            for the dicts are:
+
+                1: subject : a substring that must be containd in the email
+                subject.
+
+                2: subject_exact : the exact expected subject.
+
+                3: sender : the sender email adress.
+
+        to_path: Union[Union[TransparentPath, Path, str], List[Union[TransparentPath, Path, str]]]
+            Where to save the attatchment. If is not a list, will use the
+            same path for all monitoring conditions.
+
+        time_to_sleep: Union[int, List[int]]
+            The time between two mailbox checks (Default value = 60). If is
+            not a list, will use the same time for all monitoring conditions.
+
+        mailbox: Union[str, List[str]]
+            The mailbox to check. If is not a list, will use the same
+            mailbox for all monitoring conditions. (Default value = &#34;INBOX&#34;)
+
+        overwrite: Union[bool, List[bool]]
+            If True, will overwrite any file with the same name. Else rename it
+            appending to now&#39;s datetime. (Default value = self.overwrite)
+
+        timeout: int
+            Time in seconds the monitor must remain up. None for infinite time (Default value = None)
+
+        Returns
+        -------
+        None
+
+        &#34;&#34;&#34;
+
+        if overwrite is None:
+            overwrite = self.overwrite
+
+        if not isinstance(conditions, list):
+            conditions = [conditions]
+        if not isinstance(to_path, list):
+            to_path = [to_path] * len(conditions)
+        if not isinstance(time_to_sleep, list):
+            time_to_sleep = [time_to_sleep] * len(conditions)
+        if not isinstance(mailbox, list):
+            mailbox = [mailbox] * len(conditions)
+        if not isinstance(overwrite, list):
+            overwrite = [overwrite] * len(conditions)
+
+        if not len(conditions) == len(to_path):
+            raise ValueError(&#34;to_path and conditions must have same length&#34;)
+        if not len(conditions) == len(time_to_sleep):
+            raise ValueError(&#34;time_to_sleep and conditions must have same length&#34;)
+        if not len(conditions) == len(mailbox):
+            raise ValueError(&#34;mailbox and conditions must have same length&#34;)
+        theargs = []
+        for i in range(len(conditions)):
+            theargs.append((self, conditions[i], to_path[i], time_to_sleep[i], mailbox[i], overwrite[i], timeout))
+
+        print(&#34;Will start monitoring for new emails. You can stop the monitoring at any moment by pressing &#39;CTRL+C&#39;.&#34;)
+        if timeout is not None:
+            print(f&#34;Monitoring will remain up for {timeout} seconds then will shut down.&#34;)
+        for arg in theargs:
+            threading.Thread(target=MailMonitor._monitor, args=arg).start()
+
+    # noinspection PyUnresolvedReferences
+    def fetch_one_mail(self,
+                       mode: str,
+                       save_dir: Union[str, Path],
+                       state: str = &#34;ALL&#34;,
+                       subject: str = None,
+                       sender: str = None,
+                       body: str = None,
+                       date: Union[str, datetime, None] = None,
+                       mailbox: Union[str, List[str]] = &#34;INBOX&#34;,
+                       ) -&gt; Union[bool, tuple]:
+        &#34;&#34;&#34;
+
+        Will fetch to attachments of a mail based on the date on arrival and the select mode
+
+        Parameters
+        ----------
+        subject : str
+
+        sender : str
+
+        state : str (SEEN, UNSEEN, ALL)
+
+        date : Union[str, datetime]
+
+        mode : str (last, next, nearest, exact)
+
+        to_path : Union[Union[&#34;TransparentPath&#34;, Path, str], List[Union[&#34;TransparentPath&#34;, Path, str]]]
+
+        mailbox : Union[str, List[str]] = &#34;INBOX&#34;
+
+        overwrite : Union[bool, List[bool]] = None
+
+
+        Returns
+        -------
+        Union[bool, tuple]
+            True and mail date if successful else False
+        &#34;&#34;&#34;
+        self.open_connection()
+        self.mailbox.select(mailbox)
+        base_req = &#34;&#34;
+        if subject is not None:
+            for i in split_spec_char(subject):
+                base_req += f&#39;SUBJECT &#34;{i}&#34; &#39;
+        if sender is not None:
+            base_req += f&#34;FROM {sender} &#34;
+        if body is not None:
+            base_req += f&#34;BODY {body} &#34;
+        if state != &#34;ALL&#34;:
+            base_req += f&#34;({state})&#34;
+        if date is None:
+            base_req += f&#34;ON {self.configure_date(datetime.now())}&#34;
+        elif mode == &#34;last&#34;:
+            base_req += f&#34;BEFORE {self.configure_date(date)}&#34;
+        elif mode == &#34;next&#34;:
+            base_req += f&#34;SINCE {self.configure_date(date)}&#34;
+        elif mode == &#34;on&#34;:
+            base_req += f&#34;ON {self.configure_date(date)}&#34;
+        uids = self.mailbox.uid(&#34;SEARCH&#34;, None, base_req)[1]
+        uids = list(map(lambda x: str(x)[2:-1], uids))
+        uids = uids[0].split(&#34; &#34;)
+        if uids[0] == &#39;&#39;:
+            return False
+        dict_date = self.list_dates(uids, invert=True)
+        dates = list(dict_date.keys())
+        if date is None:
+            date = datetime.now().date()
+        elif isinstance(date, str):
+            date = datetime.strptime(date,&#34;%Y-%m-%d&#34;).date()
+        if mode == &#34;exact&#34;:
+            uid = dict_date.get(date, None)
+            if uid is None:
+                return False
+            uid = uid[0]
+        # TODO (Aducourthial): add time sensitivity
+        elif mode == &#34;next&#34;:
+            uid = dict_date[(lambda x, y: min(x, key=lambda i: abs(i - y) if i &lt; y else np.inf))(dates, date)][0]
+        elif mode == &#34;last&#34;:
+            uid = dict_date[(lambda x, y: min(x, key=lambda i: abs(i - y) if i &gt; y else np.inf))(dates, date)][0]
+        elif mode == &#34;nearest&#34;:
+            uid = dict_date[(lambda x, y: min(x, key=lambda i: abs(i - y)))(dates, date)][0]
+        else:
+            return False
+        bp = Path(save_dir)
+        if not bp.exists():
+            bp.mkdir()
+        for i, j in self.fetch_attachment(uid).items():
+            (bp / i).write_bytes(j)
+        return True, self.list_dates([uid])[uid]
+
+    def fetch_attachment(self, uid: str) -&gt; dict:
+        &#34;&#34;&#34;
+        will fetch attachments for one mail
+
+        Parameters
+        ----------
+        uid: str
+            uid of mail
+
+        Returns
+        -------
+        dict of file name : data as bytes
+        &#34;&#34;&#34;
+        ret = {}
+        for part in email.message_from_string(
+                self.mailbox.uid(&#34;FETCH&#34;, uid, &#34;(BODY.PEEK[])&#34;)[1][0][1].decode(&#34;ascii&#34;)).walk():
+            if part.get_content_maintype() != &#34;multipart&#34;:
+                name = part.get_filename()
+                if name:
+                    name = name.replace(&#34;\r&#34;, &#34;&#34;).replace(&#34;\n&#34;, &#34;&#34;)
+                    data = part.get_payload(decode=True)
+                    ret[name] = data
+        return ret
+
+    def list_dates(self, uids: list, invert: bool = False):
+        &#34;&#34;&#34;
+        fetch intenal dates of list of uid
+        base &gt; {uid : date}
+        inverted &gt; {date : uids}
+
+        Parameters
+        ----------
+        uids: list
+        invert : bool
+                invert dict
+
+        Returns
+        -------
+        dict
+        &#34;&#34;&#34;
+        ret = {}
+        for uid in uids:
+            msg = self.mailbox.uid(&#34;FETCH&#34;, uid, &#34;INTERNALDATE&#34;)
+            ret[uid] = self.read_date(msg[1][0].decode().split(&#39;&#34;&#39;)[-2][:11])
+        if invert:
+            bi = ret.copy()
+            ret = {}
+            for i, j in bi.items():
+                if j not in ret.keys():
+                    ret[j] = [i]
+                else:
+                    ret[j].append(i)
+        return ret
+
+    def _monitor(
+            self,
+            conditions: dict,
+            to_path: Union[&#34;TransparentPath&#34;, Path, str],
+            time_to_sleep: int = 60,
+            mailbox: str = &#34;INBOX&#34;,
+            overwrite: bool = None,
+            timeout: int = None,
+    ) -&gt; None:
+        &#34;&#34;&#34;
+
+        Parameters
+        ----------
+        conditions: dict
+            The patterns to match for the mail to trigger. The keys are:
+
+                1: subject : a substring that must be containd in the email
+                subject.
+
+                2: subject_exact : the exact expected subject.
+
+                3: sender : the sender email adress.
+
+        to_path: Union[TransparentPath, Path, str]
+
+        time_to_sleep: int
+             The time between two mailbox checks (Default value = 60)
+
+        mailbox: str
+             The mailbox to check (Default value = &#34;INBOX&#34;)
+
+        timeout: int
+            Time in seconds the monitor must remain up. None for infinite time (Default value = None)
+
+        Returns
+        -------
+        None
+
+        &#34;&#34;&#34;
+
+        if overwrite is None:
+            overwrite = self.overwrite
+
+        s = (
+            f&#34;Checking {mailbox} of {self.username} each {time_to_sleep} &#34;
+            f&#34;seconds for new emails matching the conditions:\n&#34;
+        )
+        for condition in conditions:
+            if condition not in MailMonitor.accepted_conditions:
+                raise KeyError(f&#34;Condition {condition} not valid&#34;)
+            s += f&#34;  - &#39;{condition}&#39; = {conditions[condition]}\n&#34;
+        s += f&#34;Will save the attachment in {to_path}&#34;
+        print(s)
+
+        def the_while(shelf: MailMonitor, t: int):
+            t0 = time()
+            while True:
+                if shelf.exit:
+                    break
+                shelf.open_connection()
+                shelf.mailbox.select(mailbox)
+                cond = &#34;&#34;
+                if &#34;subject&#34; in conditions:
+                    matches = split_spec_char(conditions[&#34;subject&#34;])
+                    for m in matches:
+                        cond = f&#39;{cond}SUBJECT &#34;{m}&#34; &#39;
+                if &#34;sender&#34; in conditions:
+                    cond = f&#39;{cond}FROM &#34;{conditions[&#34;sender&#34;]}&#34; &#39;
+                if len(cond) == 0:
+                    raise ValueError(&#34;No filtering conditions specified&#34;)
+
+                cond = f&#34;{cond}(UNSEEN)&#34;
+                uids = shelf.mailbox.uid(&#34;SEARCH&#34;, None, cond)[1][0].split()
+                for uid in uids:
+                    try:
+                        typ, msg_data = shelf.mailbox.uid(&#34;FETCH&#34;, uid, &#34;(BODY.PEEK[])&#34;)
+                    except ConnectionResetError:
+                        break
+                    if typ == &#34;NO&#34;:
+                        raise MailException(msg_data[0])
+                    email_body = &#34;&#34;
+                    if msg_data[0] is not None:
+                        # noinspection PyUnresolvedReferences
+                        email_body = msg_data[0][1]
+                    else:
+                        MailMonitor.log(&#34;Triggered on an empty mail?!&#34;, &#34;warning&#34;)
+                    encoding = chardet.detect(email_body)[&#34;encoding&#34;]
+                    email_body = email_body.decode(encoding)
+                    mail = email.message_from_string(email_body)
+
+                    print(
+                        f&#34;Triggered at {get_datetime_now()} on mail &#34;
+                        f&#34;subject &#39;{mail[&#39;Subject&#39;]}&#39;&#34;
+                        f&#34; from &#39;{mail[&#39;From&#39;]}&#39;&#34;
+                    )
+                    for part in mail.walk():
+                        save_attachment(part, to_path, overwrite)
+                    _, _ = shelf.mailbox.uid(&#34;FETCH&#34;, uid, &#34;(RFC822)&#34;)
+                    print(&#34;Finished reading the mail&#34;)
+                if not shelf.mailbox.state == &#34;LOGOUT&#34;:
+                    shelf.mailbox.select()
+                    shelf.mailbox.close()
+                    shelf.mailbox.logout()
+                # Verification toutes les x secondes
+                sleep(time_to_sleep)
+                if t is not None and time() - t0 &gt; t:
+                    print(f&#34;Requested run time of {t} completed. Exiting...&#34;)
+                    break
+
+        the_while(self, timeout)
+
+    # noinspection PyUnresolvedReferences
+    def send(self, msg):
+        new_message = email.message.Message()
+        new_message[&#34;From&#34;] = f&#34;{self.username}@{MailMonitor.default_mail}&#34;
+        new_message[&#34;Subject&#34;] = &#34;MailMonitoring ended with Exception&#34;
+        new_message.set_payload(msg)
+        self.open_connection()
+        self.mailbox.append(
+            &#34;INBOX&#34;, &#34;&#34;, imaplib.Time2Internaldate(time()), str(new_message).encode(),
+        )
+        if not self.mailbox.state == &#34;LOGOUT&#34;:
+            self.mailbox.select()
+            self.mailbox.close()
+            self.mailbox.logout()
+        print(f&#34;Sent warning message to {self.username}@{MailMonitor.default_mail}&#34;)
+
+    @classmethod
+    def log(cls, message, type_):
+        if cls.logger is None:
+            if type_ == &#34;error&#34; or type_ == &#34;critical&#34;:
+                if isinstance(message, BaseException):
+                    raise message
+                else:
+                    raise ValueError(message)
+            elif type_ == &#34;warning&#34;:
+                warnings.warn(message)
+            else:
+                print(message)
+        else:
+            getattr(cls.logger, type_)(message)
+
+
+_excepthook = getattr(sys, &#34;excepthook&#34;)
+
+
+# noinspection PyBroadException
+@atexit.register
+def clean():
+    for mm in MailMonitor.instances:
+        try:
+            if mm.mailbox is not None and not mm.mailbox.state == &#34;LOGOUT&#34;:
+                mm.mailbox.select()
+                mm.mailbox.close()
+                mm.mailbox.logout()
+        except Exception as e:
+            MailMonitor.log(&#34;Failed to close the mailbox:&#34;, &#34;warning&#34;)
+            MailMonitor.log(e, &#34;warning&#34;)
+    del MailMonitor.instances
+
+
+def overload_raise(ex, val, tb):
+    if ex != KeyboardInterrupt:
+        li = traceback.format_exception(ex, val, tb)
+        to_send = &#34;&#34;.join(li)
+        for mm in MailMonitor.instances:
+            mm.send(to_send)
+        _excepthook(ex, val, tb)
+    else:
+        sys.exit(0)
+
+
+setattr(sys, &#34;excepthook&#34;, overload_raise)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="mailutility.mailmonitor.clean"><code class="name flex">
+<span>def <span class="ident">clean</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@atexit.register
+def clean():
+    for mm in MailMonitor.instances:
+        try:
+            if mm.mailbox is not None and not mm.mailbox.state == &#34;LOGOUT&#34;:
+                mm.mailbox.select()
+                mm.mailbox.close()
+                mm.mailbox.logout()
+        except Exception as e:
+            MailMonitor.log(&#34;Failed to close the mailbox:&#34;, &#34;warning&#34;)
+            MailMonitor.log(e, &#34;warning&#34;)
+    del MailMonitor.instances</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.get_datetime_now"><code class="name flex">
+<span>def <span class="ident">get_datetime_now</span></span>(<span>fmt: str = '%d%m%Y %H:%M:%S') ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>fmt</code></strong> :&ensp;<code>str</code></dt>
+<dd>The date format to use (Default value = "%d%m%Y %H:%M:%S")</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_datetime_now(fmt: str = &#34;%d%m%Y %H:%M:%S&#34;) -&gt; str:
+    &#34;&#34;&#34;
+
+    Parameters
+    ----------
+    fmt: str
+         The date format to use (Default value = &#34;%d%m%Y %H:%M:%S&#34;)
+
+    Returns
+    -------
+    str
+
+    &#34;&#34;&#34;
+
+    date = datetime.now()
+    return date.strftime(fmt)</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.overload_raise"><code class="name flex">
+<span>def <span class="ident">overload_raise</span></span>(<span>ex, val, tb)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def overload_raise(ex, val, tb):
+    if ex != KeyboardInterrupt:
+        li = traceback.format_exception(ex, val, tb)
+        to_send = &#34;&#34;.join(li)
+        for mm in MailMonitor.instances:
+            mm.send(to_send)
+        _excepthook(ex, val, tb)
+    else:
+        sys.exit(0)</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.persist_file"><code class="name flex">
+<span>def <span class="ident">persist_file</span></span>(<span>filepath: TransparentPath, part)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>filepath</code></strong> :&ensp;<code>TransparentPath</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>part:</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def persist_file(filepath: &#34;TransparentPath&#34;, part) -&gt; None:
+    &#34;&#34;&#34;
+
+    Parameters
+    ----------
+    filepath: TransparentPath
+
+    part:
+
+
+    Returns
+    -------
+    None
+
+    &#34;&#34;&#34;
+    data = part.get_payload(decode=True)
+    filepath.write_bytes(data)
+    print(f&#34;SAVING FILE to : {filepath}.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.rename_file"><code class="name flex">
+<span>def <span class="ident">rename_file</span></span>(<span>filename, to_path: Union[str, pathlib.Path, ForwardRef('TransparentPath')], overwrite: bool = True) ‑> Union[pathlib.Path, TransparentPath]</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>filename</code></strong> :&ensp;<code>str</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>to_path</code></strong> :&ensp;<code>Union[str, Path, "TransparentPath"]</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>overwrite</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If True, will overwrite any file with the same name. Else rename it
+appending to now's datetime.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Union[str, Path, "TransparentPath"]</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rename_file(
+    filename, to_path: Union[str, Path, &#34;TransparentPath&#34;], overwrite: bool = True
+) -&gt; Union[Path, &#34;TransparentPath&#34;]:
+    &#34;&#34;&#34;
+
+    Parameters
+    ----------
+    filename: str
+
+    to_path: Union[str, Path, &#34;TransparentPath&#34;]
+
+    overwrite: bool
+        If True, will overwrite any file with the same name. Else rename it
+        appending to now&#39;s datetime.
+
+
+    Returns
+    -------
+    Union[str, Path, &#34;TransparentPath&#34;]
+
+    &#34;&#34;&#34;
+    date_ref = datetime.today()
+
+    try:
+        filepath = to_path / filename
+    except TypeError:
+        to_path = Path(to_path)
+        filepath = to_path / filename
+    ext = filepath.suffix
+    if filepath.is_file() and overwrite is False:
+        filepath = type(to_path)(f&#34;{to_path / filepath.stem}_{date_ref}{ext}&#34;)
+    return filepath</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.save_attachment"><code class="name flex">
+<span>def <span class="ident">save_attachment</span></span>(<span>part, to_path: Union[str, pathlib.Path, ForwardRef('TransparentPath')], overwrite: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="parameters">Parameters</h2>
+<p>part:</p>
+<dl>
+<dt><strong><code>to_path</code></strong> :&ensp;<code>Union[TransparentPath, Path, str]</code></dt>
+<dd>The directory to save the file in</dd>
+<dt><strong><code>overwrite</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If True, will overwrite any file with the same name. Else rename it
+appending to now's datetime.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_attachment(part, to_path: Union[&#34;TransparentPath&#34;, Path, str], overwrite: bool = True) -&gt; None:
+    &#34;&#34;&#34;
+
+    Parameters
+    ----------
+    part:
+
+    to_path: Union[TransparentPath, Path, str]
+        The directory to save the file in
+
+    overwrite: bool
+        If True, will overwrite any file with the same name. Else rename it
+        appending to now&#39;s datetime.
+
+
+    Returns
+    -------
+    None
+
+    &#34;&#34;&#34;
+    if part.get(&#34;Content-Disposition&#34;) is None:
+        return
+
+    if part.get_content_maintype() != &#34;multipart&#34;:
+        name = part.get_filename()
+        if not name:
+            raise ValueError(f&#34;No file name in part {part}!&#34;)
+        name = name.replace(&#34;\r&#34;, &#34;&#34;).replace(&#34;\n&#34;, &#34;&#34;)
+        filepath = rename_file(name, to_path, overwrite)
+        persist_file(filepath, part)</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.split_spec_char"><code class="name flex">
+<span>def <span class="ident">split_spec_char</span></span>(<span>s)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def split_spec_char(s):
+    trimmed_s = s.encode(&#34;ascii&#34;, errors=&#34;ignore&#34;).decode(&#34;ascii&#34;)
+    spec_chars = set([c for c in s if c not in trimmed_s])
+    out = [&#34;&#34;]
+    for c in s:
+        if c not in spec_chars:
+            out[-1] += c
+        else:
+            out.append(&#34;&#34;)
+    return [o for o in out if o != &#34;&#34;]</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="mailutility.mailmonitor.MailException"><code class="flex name class">
+<span>class <span class="ident">MailException</span></span>
+<span>(</span><span>msg: str = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Any kind of mail error</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MailException(Exception):
+    &#34;&#34;&#34; Any kind of mail error &#34;&#34;&#34;
+
+    def __init__(self, msg: str = None):
+        self.message = msg or &#34;There is a problem with the mails...&#34;
+        super().__init__(self.message)
+
+    def __str__(self):
+        return self.message</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="mailutility.mailmonitor.MailMonitor"><code class="flex name class">
+<span>class <span class="ident">MailMonitor</span></span>
+<span>(</span><span>username: str = None, token: str = None, port: int = 993, hostname: str = 'outlook.office365.com', connect: bool = False, overwrite: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class allowing to monitor a mailbox to save attachments to a
+directory using conditions on sender and subjet.</p>
+<p>If two-factor auth is activated, you will need to
+provide
+an app password instead of your regular password. If you do not
+have one or do not remember it, make a new one by following the
+instructions here (only valid for office365 acconuts):
+<a href="https://docs.microsoft.com/fr-fr/azure/active-directory/user-help/">https://docs.microsoft.com/fr-fr/azure/active-directory/user-help/</a>
+multi-factor-authentication-end-user-app-passwords</p>
+<p>The relevant security page to set the app passwords :
+<a href="https://account.activedirectory.windowsazure.com/Proofup.aspx">https://account.activedirectory.windowsazure.com/Proofup.aspx</a></p>
+<p>MailMonitor will use threading to allow for the monitoring of
+different conditions and saving to different paths.</p>
+<p>For a basic usage (monitoring one set of conditions and saving to one
+location) :</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; from mailutility import MailMonitor  # doctest: +SKIP
+&gt;&gt;&gt; mail = MailMonitor(&quot;username&quot;)  # doctest: +SKIP
+&gt;&gt;&gt; mail.monitor(  # doctest: +SKIP
+&gt;&gt;&gt;     conditions={&quot;subject&quot;: &quot;test&quot;,  # doctest: +SKIP
+&gt;&gt;&gt;                 &quot;sender&quot;: &quot;cottephi@gmail.com&quot;},  # doctest: +SKIP
+&gt;&gt;&gt;     to_path=&quot;/home/username/Bureau&quot;,  # doctest: +SKIP
+&gt;&gt;&gt;     time_to_sleep=5  # doctest: +SKIP
+&gt;&gt;&gt; )  # doctest: +SKIP
+</code></pre>
+<p>To monitor several sources and save to different paths, use :</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; mail.monitor(  # doctest: +SKIP
+&gt;&gt;&gt;     conditions=[{&quot;sender&quot;: &quot;a@b.c&quot;, &quot;subject&quot;: &quot;g&quot;}, {&quot;sender&quot;: &quot;d@e.f&quot;, &quot;subject&quot;: &quot;h&quot;}],  # doctest: +SKIP
+&gt;&gt;&gt;     to_path=[&quot;/home/username/Desktop&quot;, &quot;/home/username/Documents&quot;],  # doctest: +SKIP
+&gt;&gt;&gt;     time_to_sleep=5,  # doctest: +SKIP
+&gt;&gt;&gt; )
+</code></pre>
+<p>You can decide to save to GCS by using TransparentPath:</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; # noinspection PyShadowingNames, PyUnresolvedReferences
+&gt;&gt;&gt; from transparentpath import TransparentPath as Path  # doctest: +SKIP
+&gt;&gt;&gt; Path.set_global_fs(&quot;gcs&quot;, bucket=&quot;my_bucket&quot;, project=&quot;my_project&quot;)  # doctest: +SKIP
+&gt;&gt;&gt; mail = MailMonitor(&quot;tomonitor@mailbox.com&quot;)  # doctest: +SKIP
+&gt;&gt;&gt; mail.monitor(  # doctest: +SKIP
+&gt;&gt;&gt;     conditions={&quot;subject&quot;: &quot;test&quot;,  # doctest: +SKIP
+&gt;&gt;&gt;                 &quot;sender&quot;: &quot;chient@chat.com&quot;},  # doctest: +SKIP
+&gt;&gt;&gt;     to_path=Path(&quot;attachment&quot;),   # doctest: +SKIP
+&gt;&gt;&gt;     time_to_sleep=5  # doctest: +SKIP
+&gt;&gt;&gt; )  # doctest: +SKIP
+</code></pre>
+<p>If conditions is an empty dict, will save attachments of all incoming
+mails.</p>
+<p>Any email triggering the monitor will be marked as SEEN.</p>
+<p>Notes and warnings:</p>
+<pre><code>1. Even though multiprocessing is used, any code written after the
+call to mail.monitor will not be executed until the monitoring ends.
+
+2. The file saving system tends to see mail signature as attachments,
+you will have to delete the files yourself, or ignore them in your
+analysis.
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MailMonitor(object):
+    &#34;&#34;&#34;Class allowing to monitor a mailbox to save attachments to a
+    directory using conditions on sender and subjet.
+
+    If two-factor auth is activated, you will need to
+    provide  an app password instead of your regular password. If you do not
+    have one or do not remember it, make a new one by following the
+    instructions here (only valid for office365 acconuts):
+    https://docs.microsoft.com/fr-fr/azure/active-directory/user-help/
+    multi-factor-authentication-end-user-app-passwords
+
+    The relevant security page to set the app passwords :
+    https://account.activedirectory.windowsazure.com/Proofup.aspx
+
+    MailMonitor will use threading to allow for the monitoring of
+    different conditions and saving to different paths.
+
+    For a basic usage (monitoring one set of conditions and saving to one
+    location) :
+
+    &gt;&gt;&gt; from mailutility import MailMonitor  # doctest: +SKIP
+    &gt;&gt;&gt; mail = MailMonitor(&#34;username&#34;)  # doctest: +SKIP
+    &gt;&gt;&gt; mail.monitor(  # doctest: +SKIP
+    &gt;&gt;&gt;     conditions={&#34;subject&#34;: &#34;test&#34;,  # doctest: +SKIP
+    &gt;&gt;&gt;                 &#34;sender&#34;: &#34;cottephi@gmail.com&#34;},  # doctest: +SKIP
+    &gt;&gt;&gt;     to_path=&#34;/home/username/Bureau&#34;,  # doctest: +SKIP
+    &gt;&gt;&gt;     time_to_sleep=5  # doctest: +SKIP
+    &gt;&gt;&gt; )  # doctest: +SKIP
+
+    To monitor several sources and save to different paths, use :
+
+    &gt;&gt;&gt; mail.monitor(  # doctest: +SKIP
+    &gt;&gt;&gt;     conditions=[{&#34;sender&#34;: &#34;a@b.c&#34;, &#34;subject&#34;: &#34;g&#34;}, {&#34;sender&#34;: &#34;d@e.f&#34;, &#34;subject&#34;: &#34;h&#34;}],  # doctest: +SKIP
+    &gt;&gt;&gt;     to_path=[&#34;/home/username/Desktop&#34;, &#34;/home/username/Documents&#34;],  # doctest: +SKIP
+    &gt;&gt;&gt;     time_to_sleep=5,  # doctest: +SKIP
+    &gt;&gt;&gt; )
+
+    You can decide to save to GCS by using TransparentPath:
+
+    &gt;&gt;&gt; # noinspection PyShadowingNames, PyUnresolvedReferences
+    &gt;&gt;&gt; from transparentpath import TransparentPath as Path  # doctest: +SKIP
+    &gt;&gt;&gt; Path.set_global_fs(&#34;gcs&#34;, bucket=&#34;my_bucket&#34;, project=&#34;my_project&#34;)  # doctest: +SKIP
+    &gt;&gt;&gt; mail = MailMonitor(&#34;tomonitor@mailbox.com&#34;)  # doctest: +SKIP
+    &gt;&gt;&gt; mail.monitor(  # doctest: +SKIP
+    &gt;&gt;&gt;     conditions={&#34;subject&#34;: &#34;test&#34;,  # doctest: +SKIP
+    &gt;&gt;&gt;                 &#34;sender&#34;: &#34;chient@chat.com&#34;},  # doctest: +SKIP
+    &gt;&gt;&gt;     to_path=Path(&#34;attachment&#34;),   # doctest: +SKIP
+    &gt;&gt;&gt;     time_to_sleep=5  # doctest: +SKIP
+    &gt;&gt;&gt; )  # doctest: +SKIP
+
+    If conditions is an empty dict, will save attachments of all incoming
+    mails.
+
+    Any email triggering the monitor will be marked as SEEN.
+
+    Notes and warnings:
+
+        1. Even though multiprocessing is used, any code written after the
+        call to mail.monitor will not be executed until the monitoring ends.
+
+        2. The file saving system tends to see mail signature as attachments,
+        you will have to delete the files yourself, or ignore them in your
+        analysis.
+    &#34;&#34;&#34;
+
+    accepted_conditions = [&#34;sender&#34;, &#34;subject&#34;, &#34;subject_exact&#34;]
+    instances = []
+    default_mail = &#34;&#34;
+    logger = None
+
+    def __init__(
+            self,
+            username: str = None,
+            token: str = None,
+            port: int = 993,
+            hostname: str = &#34;outlook.office365.com&#34;,
+            connect: bool = False,
+            overwrite: bool = True,
+    ):
+
+        if username is None:
+            username = input(&#34;User name:\n&#34;)
+        if token is None:
+            token = getpass.getpass(f&#34;Password for {username}:&#34;)
+        if &#34;@&#34; not in username:
+            username = f&#34;{username}@{MailMonitor.default_mail}&#34;
+
+        self.username = username
+        self.token = token
+        self.port = port
+        self.hostname = hostname
+        self.mailbox = None
+        self.exit = False
+        self.overwrite = overwrite
+        if connect:
+            self.open_connection()
+        MailMonitor.instances.append(self)
+
+    def open_connection(self):
+        &#34;&#34;&#34; &#34;&#34;&#34;
+        # Connection to the server
+        talk = False
+        if self.mailbox is None:
+            print(f&#34;Connecting to {self.hostname} as {self.username}...&#34;)
+            talk = True
+        attempts = 0
+        while True:
+            attempts += 1
+            try:
+                self.mailbox = imaplib.IMAP4_SSL(self.hostname, self.port)
+                # Login to your account
+                self.mailbox.login(self.username, self.token)
+                self.mailbox.select()
+                if talk:
+                    print(&#34;...successful&#34;)
+                break
+            except socket.gaierror as e:
+                print(f&#34;Failed more than {attempts} times. Raising the exception.&#34;)
+                if attempts &gt; 60:
+                    raise e
+                else:
+                    print(f&#34;Failed. Retrying for the {attempts}th time...&#34;)
+                    sleep(1)
+
+    @staticmethod
+    def configure_date(date: Union[str, datetime]) -&gt; str:
+        &#34;&#34;&#34;
+        Converts datetime format to mail date format
+
+        &gt; https://datatracker.ietf.org/doc/html/rfc3501 page 84/85
+
+        Parameters
+        ----------
+        date : Union[str, datetime]
+            date to convert
+
+        Returns
+        -------
+        str
+            converted date
+        &#34;&#34;&#34;
+        if isinstance(date, str):
+            date = datetime.strptime(date, &#34;%Y-%m-%d&#34;)
+        m_dict = {&#34;01&#34;: &#34;Jan&#34;, &#34;02&#34;: &#34;Feb&#34;, &#34;03&#34;: &#34;Mar&#34;, &#34;04&#34;: &#34;Apr&#34;, &#34;05&#34;: &#34;May&#34;, &#34;06&#34;: &#34;Jun&#34;, &#34;07&#34;: &#34;Jul&#34;,
+                  &#34;08&#34;: &#34;Aug&#34;, &#34;09&#34;: &#34;Sep&#34;, &#34;10&#34;: &#34;Oct&#34;, &#34;11&#34;: &#34;Nov&#34;, &#34;12&#34;: &#34;Dec&#34;}
+        if len(str(date.month)) == 1:
+            m = &#34;0&#34; + str(date.month)
+        else:
+            m = str(date.month)
+        mv = m_dict[m]
+        return str(date.day) + &#34;-&#34; + mv + &#34;-&#34; + str(date.year)
+
+    @staticmethod
+    def read_date(date: str) -&gt; datetime.date:
+        &#34;&#34;&#34;
+        convert date from mail format for datetime
+
+        &gt; https://datatracker.ietf.org/doc/html/rfc3501 page 84/85
+
+        Parameters
+        ----------
+        date : str
+            mail format
+
+        Returns
+        -------
+        datetime.date
+        &#34;&#34;&#34;
+        m_dict = {&#34;01&#34;: &#34;Jan&#34;, &#34;02&#34;: &#34;Feb&#34;, &#34;03&#34;: &#34;Mar&#34;, &#34;04&#34;: &#34;Apr&#34;, &#34;05&#34;: &#34;May&#34;, &#34;06&#34;: &#34;Jun&#34;, &#34;07&#34;: &#34;Jul&#34;,
+                  &#34;08&#34;: &#34;Aug&#34;, &#34;09&#34;: &#34;Sep&#34;, &#34;10&#34;: &#34;Oct&#34;, &#34;11&#34;: &#34;Nov&#34;, &#34;12&#34;: &#34;Dec&#34;}
+        day = date[:2]
+        m_dict = {i: j for i, j in zip(m_dict.values(), m_dict.keys())}
+        month = m_dict[date[3:6]]
+        year = date[7:11]
+        date = datetime.strptime(year + &#34;-&#34; + month + &#34;-&#34; + day, &#34;%Y-%m-%d&#34;)
+        return date.date()
+
+    def monitor(
+            self,
+            conditions: Union[dict, List[dict]],
+            to_path: Union[Union[&#34;TransparentPath&#34;, Path, str], List[Union[&#34;TransparentPath&#34;, Path, str]]],
+            time_to_sleep: Union[int, List[int]] = 60,
+            mailbox: Union[str, List[str]] = &#34;INBOX&#34;,
+            overwrite: Union[bool, List[bool]] = None,
+            timeout: int = None,
+    ) -&gt; None:
+        &#34;&#34;&#34;
+
+        Parameters
+        ----------
+        conditions: Union[dict, List[dict]]
+            The list of patterns to match for the mail to trigger. The keys
+            for the dicts are:
+
+                1: subject : a substring that must be containd in the email
+                subject.
+
+                2: subject_exact : the exact expected subject.
+
+                3: sender : the sender email adress.
+
+        to_path: Union[Union[TransparentPath, Path, str], List[Union[TransparentPath, Path, str]]]
+            Where to save the attatchment. If is not a list, will use the
+            same path for all monitoring conditions.
+
+        time_to_sleep: Union[int, List[int]]
+            The time between two mailbox checks (Default value = 60). If is
+            not a list, will use the same time for all monitoring conditions.
+
+        mailbox: Union[str, List[str]]
+            The mailbox to check. If is not a list, will use the same
+            mailbox for all monitoring conditions. (Default value = &#34;INBOX&#34;)
+
+        overwrite: Union[bool, List[bool]]
+            If True, will overwrite any file with the same name. Else rename it
+            appending to now&#39;s datetime. (Default value = self.overwrite)
+
+        timeout: int
+            Time in seconds the monitor must remain up. None for infinite time (Default value = None)
+
+        Returns
+        -------
+        None
+
+        &#34;&#34;&#34;
+
+        if overwrite is None:
+            overwrite = self.overwrite
+
+        if not isinstance(conditions, list):
+            conditions = [conditions]
+        if not isinstance(to_path, list):
+            to_path = [to_path] * len(conditions)
+        if not isinstance(time_to_sleep, list):
+            time_to_sleep = [time_to_sleep] * len(conditions)
+        if not isinstance(mailbox, list):
+            mailbox = [mailbox] * len(conditions)
+        if not isinstance(overwrite, list):
+            overwrite = [overwrite] * len(conditions)
+
+        if not len(conditions) == len(to_path):
+            raise ValueError(&#34;to_path and conditions must have same length&#34;)
+        if not len(conditions) == len(time_to_sleep):
+            raise ValueError(&#34;time_to_sleep and conditions must have same length&#34;)
+        if not len(conditions) == len(mailbox):
+            raise ValueError(&#34;mailbox and conditions must have same length&#34;)
+        theargs = []
+        for i in range(len(conditions)):
+            theargs.append((self, conditions[i], to_path[i], time_to_sleep[i], mailbox[i], overwrite[i], timeout))
+
+        print(&#34;Will start monitoring for new emails. You can stop the monitoring at any moment by pressing &#39;CTRL+C&#39;.&#34;)
+        if timeout is not None:
+            print(f&#34;Monitoring will remain up for {timeout} seconds then will shut down.&#34;)
+        for arg in theargs:
+            threading.Thread(target=MailMonitor._monitor, args=arg).start()
+
+    # noinspection PyUnresolvedReferences
+    def fetch_one_mail(self,
+                       mode: str,
+                       save_dir: Union[str, Path],
+                       state: str = &#34;ALL&#34;,
+                       subject: str = None,
+                       sender: str = None,
+                       body: str = None,
+                       date: Union[str, datetime, None] = None,
+                       mailbox: Union[str, List[str]] = &#34;INBOX&#34;,
+                       ) -&gt; Union[bool, tuple]:
+        &#34;&#34;&#34;
+
+        Will fetch to attachments of a mail based on the date on arrival and the select mode
+
+        Parameters
+        ----------
+        subject : str
+
+        sender : str
+
+        state : str (SEEN, UNSEEN, ALL)
+
+        date : Union[str, datetime]
+
+        mode : str (last, next, nearest, exact)
+
+        to_path : Union[Union[&#34;TransparentPath&#34;, Path, str], List[Union[&#34;TransparentPath&#34;, Path, str]]]
+
+        mailbox : Union[str, List[str]] = &#34;INBOX&#34;
+
+        overwrite : Union[bool, List[bool]] = None
+
+
+        Returns
+        -------
+        Union[bool, tuple]
+            True and mail date if successful else False
+        &#34;&#34;&#34;
+        self.open_connection()
+        self.mailbox.select(mailbox)
+        base_req = &#34;&#34;
+        if subject is not None:
+            for i in split_spec_char(subject):
+                base_req += f&#39;SUBJECT &#34;{i}&#34; &#39;
+        if sender is not None:
+            base_req += f&#34;FROM {sender} &#34;
+        if body is not None:
+            base_req += f&#34;BODY {body} &#34;
+        if state != &#34;ALL&#34;:
+            base_req += f&#34;({state})&#34;
+        if date is None:
+            base_req += f&#34;ON {self.configure_date(datetime.now())}&#34;
+        elif mode == &#34;last&#34;:
+            base_req += f&#34;BEFORE {self.configure_date(date)}&#34;
+        elif mode == &#34;next&#34;:
+            base_req += f&#34;SINCE {self.configure_date(date)}&#34;
+        elif mode == &#34;on&#34;:
+            base_req += f&#34;ON {self.configure_date(date)}&#34;
+        uids = self.mailbox.uid(&#34;SEARCH&#34;, None, base_req)[1]
+        uids = list(map(lambda x: str(x)[2:-1], uids))
+        uids = uids[0].split(&#34; &#34;)
+        if uids[0] == &#39;&#39;:
+            return False
+        dict_date = self.list_dates(uids, invert=True)
+        dates = list(dict_date.keys())
+        if date is None:
+            date = datetime.now().date()
+        elif isinstance(date, str):
+            date = datetime.strptime(date,&#34;%Y-%m-%d&#34;).date()
+        if mode == &#34;exact&#34;:
+            uid = dict_date.get(date, None)
+            if uid is None:
+                return False
+            uid = uid[0]
+        # TODO (Aducourthial): add time sensitivity
+        elif mode == &#34;next&#34;:
+            uid = dict_date[(lambda x, y: min(x, key=lambda i: abs(i - y) if i &lt; y else np.inf))(dates, date)][0]
+        elif mode == &#34;last&#34;:
+            uid = dict_date[(lambda x, y: min(x, key=lambda i: abs(i - y) if i &gt; y else np.inf))(dates, date)][0]
+        elif mode == &#34;nearest&#34;:
+            uid = dict_date[(lambda x, y: min(x, key=lambda i: abs(i - y)))(dates, date)][0]
+        else:
+            return False
+        bp = Path(save_dir)
+        if not bp.exists():
+            bp.mkdir()
+        for i, j in self.fetch_attachment(uid).items():
+            (bp / i).write_bytes(j)
+        return True, self.list_dates([uid])[uid]
+
+    def fetch_attachment(self, uid: str) -&gt; dict:
+        &#34;&#34;&#34;
+        will fetch attachments for one mail
+
+        Parameters
+        ----------
+        uid: str
+            uid of mail
+
+        Returns
+        -------
+        dict of file name : data as bytes
+        &#34;&#34;&#34;
+        ret = {}
+        for part in email.message_from_string(
+                self.mailbox.uid(&#34;FETCH&#34;, uid, &#34;(BODY.PEEK[])&#34;)[1][0][1].decode(&#34;ascii&#34;)).walk():
+            if part.get_content_maintype() != &#34;multipart&#34;:
+                name = part.get_filename()
+                if name:
+                    name = name.replace(&#34;\r&#34;, &#34;&#34;).replace(&#34;\n&#34;, &#34;&#34;)
+                    data = part.get_payload(decode=True)
+                    ret[name] = data
+        return ret
+
+    def list_dates(self, uids: list, invert: bool = False):
+        &#34;&#34;&#34;
+        fetch intenal dates of list of uid
+        base &gt; {uid : date}
+        inverted &gt; {date : uids}
+
+        Parameters
+        ----------
+        uids: list
+        invert : bool
+                invert dict
+
+        Returns
+        -------
+        dict
+        &#34;&#34;&#34;
+        ret = {}
+        for uid in uids:
+            msg = self.mailbox.uid(&#34;FETCH&#34;, uid, &#34;INTERNALDATE&#34;)
+            ret[uid] = self.read_date(msg[1][0].decode().split(&#39;&#34;&#39;)[-2][:11])
+        if invert:
+            bi = ret.copy()
+            ret = {}
+            for i, j in bi.items():
+                if j not in ret.keys():
+                    ret[j] = [i]
+                else:
+                    ret[j].append(i)
+        return ret
+
+    def _monitor(
+            self,
+            conditions: dict,
+            to_path: Union[&#34;TransparentPath&#34;, Path, str],
+            time_to_sleep: int = 60,
+            mailbox: str = &#34;INBOX&#34;,
+            overwrite: bool = None,
+            timeout: int = None,
+    ) -&gt; None:
+        &#34;&#34;&#34;
+
+        Parameters
+        ----------
+        conditions: dict
+            The patterns to match for the mail to trigger. The keys are:
+
+                1: subject : a substring that must be containd in the email
+                subject.
+
+                2: subject_exact : the exact expected subject.
+
+                3: sender : the sender email adress.
+
+        to_path: Union[TransparentPath, Path, str]
+
+        time_to_sleep: int
+             The time between two mailbox checks (Default value = 60)
+
+        mailbox: str
+             The mailbox to check (Default value = &#34;INBOX&#34;)
+
+        timeout: int
+            Time in seconds the monitor must remain up. None for infinite time (Default value = None)
+
+        Returns
+        -------
+        None
+
+        &#34;&#34;&#34;
+
+        if overwrite is None:
+            overwrite = self.overwrite
+
+        s = (
+            f&#34;Checking {mailbox} of {self.username} each {time_to_sleep} &#34;
+            f&#34;seconds for new emails matching the conditions:\n&#34;
+        )
+        for condition in conditions:
+            if condition not in MailMonitor.accepted_conditions:
+                raise KeyError(f&#34;Condition {condition} not valid&#34;)
+            s += f&#34;  - &#39;{condition}&#39; = {conditions[condition]}\n&#34;
+        s += f&#34;Will save the attachment in {to_path}&#34;
+        print(s)
+
+        def the_while(shelf: MailMonitor, t: int):
+            t0 = time()
+            while True:
+                if shelf.exit:
+                    break
+                shelf.open_connection()
+                shelf.mailbox.select(mailbox)
+                cond = &#34;&#34;
+                if &#34;subject&#34; in conditions:
+                    matches = split_spec_char(conditions[&#34;subject&#34;])
+                    for m in matches:
+                        cond = f&#39;{cond}SUBJECT &#34;{m}&#34; &#39;
+                if &#34;sender&#34; in conditions:
+                    cond = f&#39;{cond}FROM &#34;{conditions[&#34;sender&#34;]}&#34; &#39;
+                if len(cond) == 0:
+                    raise ValueError(&#34;No filtering conditions specified&#34;)
+
+                cond = f&#34;{cond}(UNSEEN)&#34;
+                uids = shelf.mailbox.uid(&#34;SEARCH&#34;, None, cond)[1][0].split()
+                for uid in uids:
+                    try:
+                        typ, msg_data = shelf.mailbox.uid(&#34;FETCH&#34;, uid, &#34;(BODY.PEEK[])&#34;)
+                    except ConnectionResetError:
+                        break
+                    if typ == &#34;NO&#34;:
+                        raise MailException(msg_data[0])
+                    email_body = &#34;&#34;
+                    if msg_data[0] is not None:
+                        # noinspection PyUnresolvedReferences
+                        email_body = msg_data[0][1]
+                    else:
+                        MailMonitor.log(&#34;Triggered on an empty mail?!&#34;, &#34;warning&#34;)
+                    encoding = chardet.detect(email_body)[&#34;encoding&#34;]
+                    email_body = email_body.decode(encoding)
+                    mail = email.message_from_string(email_body)
+
+                    print(
+                        f&#34;Triggered at {get_datetime_now()} on mail &#34;
+                        f&#34;subject &#39;{mail[&#39;Subject&#39;]}&#39;&#34;
+                        f&#34; from &#39;{mail[&#39;From&#39;]}&#39;&#34;
+                    )
+                    for part in mail.walk():
+                        save_attachment(part, to_path, overwrite)
+                    _, _ = shelf.mailbox.uid(&#34;FETCH&#34;, uid, &#34;(RFC822)&#34;)
+                    print(&#34;Finished reading the mail&#34;)
+                if not shelf.mailbox.state == &#34;LOGOUT&#34;:
+                    shelf.mailbox.select()
+                    shelf.mailbox.close()
+                    shelf.mailbox.logout()
+                # Verification toutes les x secondes
+                sleep(time_to_sleep)
+                if t is not None and time() - t0 &gt; t:
+                    print(f&#34;Requested run time of {t} completed. Exiting...&#34;)
+                    break
+
+        the_while(self, timeout)
+
+    # noinspection PyUnresolvedReferences
+    def send(self, msg):
+        new_message = email.message.Message()
+        new_message[&#34;From&#34;] = f&#34;{self.username}@{MailMonitor.default_mail}&#34;
+        new_message[&#34;Subject&#34;] = &#34;MailMonitoring ended with Exception&#34;
+        new_message.set_payload(msg)
+        self.open_connection()
+        self.mailbox.append(
+            &#34;INBOX&#34;, &#34;&#34;, imaplib.Time2Internaldate(time()), str(new_message).encode(),
+        )
+        if not self.mailbox.state == &#34;LOGOUT&#34;:
+            self.mailbox.select()
+            self.mailbox.close()
+            self.mailbox.logout()
+        print(f&#34;Sent warning message to {self.username}@{MailMonitor.default_mail}&#34;)
+
+    @classmethod
+    def log(cls, message, type_):
+        if cls.logger is None:
+            if type_ == &#34;error&#34; or type_ == &#34;critical&#34;:
+                if isinstance(message, BaseException):
+                    raise message
+                else:
+                    raise ValueError(message)
+            elif type_ == &#34;warning&#34;:
+                warnings.warn(message)
+            else:
+                print(message)
+        else:
+            getattr(cls.logger, type_)(message)</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="mailutility.mailmonitor.MailMonitor.accepted_conditions"><code class="name">var <span class="ident">accepted_conditions</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailutility.mailmonitor.MailMonitor.default_mail"><code class="name">var <span class="ident">default_mail</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailutility.mailmonitor.MailMonitor.instances"><code class="name">var <span class="ident">instances</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="mailutility.mailmonitor.MailMonitor.logger"><code class="name">var <span class="ident">logger</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="mailutility.mailmonitor.MailMonitor.configure_date"><code class="name flex">
+<span>def <span class="ident">configure_date</span></span>(<span>date: Union[str, datetime.datetime]) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts datetime format to mail date format</p>
+<blockquote>
+<p><a href="https://datatracker.ietf.org/doc/html/rfc3501">https://datatracker.ietf.org/doc/html/rfc3501</a> page 84/85</p>
+</blockquote>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>date</code></strong> :&ensp;<code>Union[str, datetime]</code></dt>
+<dd>date to convert</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>converted date</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def configure_date(date: Union[str, datetime]) -&gt; str:
+    &#34;&#34;&#34;
+    Converts datetime format to mail date format
+
+    &gt; https://datatracker.ietf.org/doc/html/rfc3501 page 84/85
+
+    Parameters
+    ----------
+    date : Union[str, datetime]
+        date to convert
+
+    Returns
+    -------
+    str
+        converted date
+    &#34;&#34;&#34;
+    if isinstance(date, str):
+        date = datetime.strptime(date, &#34;%Y-%m-%d&#34;)
+    m_dict = {&#34;01&#34;: &#34;Jan&#34;, &#34;02&#34;: &#34;Feb&#34;, &#34;03&#34;: &#34;Mar&#34;, &#34;04&#34;: &#34;Apr&#34;, &#34;05&#34;: &#34;May&#34;, &#34;06&#34;: &#34;Jun&#34;, &#34;07&#34;: &#34;Jul&#34;,
+              &#34;08&#34;: &#34;Aug&#34;, &#34;09&#34;: &#34;Sep&#34;, &#34;10&#34;: &#34;Oct&#34;, &#34;11&#34;: &#34;Nov&#34;, &#34;12&#34;: &#34;Dec&#34;}
+    if len(str(date.month)) == 1:
+        m = &#34;0&#34; + str(date.month)
+    else:
+        m = str(date.month)
+    mv = m_dict[m]
+    return str(date.day) + &#34;-&#34; + mv + &#34;-&#34; + str(date.year)</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.MailMonitor.log"><code class="name flex">
+<span>def <span class="ident">log</span></span>(<span>message, type_)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def log(cls, message, type_):
+    if cls.logger is None:
+        if type_ == &#34;error&#34; or type_ == &#34;critical&#34;:
+            if isinstance(message, BaseException):
+                raise message
+            else:
+                raise ValueError(message)
+        elif type_ == &#34;warning&#34;:
+            warnings.warn(message)
+        else:
+            print(message)
+    else:
+        getattr(cls.logger, type_)(message)</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.MailMonitor.read_date"><code class="name flex">
+<span>def <span class="ident">read_date</span></span>(<span>date: str) ‑> <method 'date' of 'datetime.datetime' objects></span>
+</code></dt>
+<dd>
+<div class="desc"><p>convert date from mail format for datetime</p>
+<blockquote>
+<p><a href="https://datatracker.ietf.org/doc/html/rfc3501">https://datatracker.ietf.org/doc/html/rfc3501</a> page 84/85</p>
+</blockquote>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>date</code></strong> :&ensp;<code>str</code></dt>
+<dd>mail format</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>datetime.date</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def read_date(date: str) -&gt; datetime.date:
+    &#34;&#34;&#34;
+    convert date from mail format for datetime
+
+    &gt; https://datatracker.ietf.org/doc/html/rfc3501 page 84/85
+
+    Parameters
+    ----------
+    date : str
+        mail format
+
+    Returns
+    -------
+    datetime.date
+    &#34;&#34;&#34;
+    m_dict = {&#34;01&#34;: &#34;Jan&#34;, &#34;02&#34;: &#34;Feb&#34;, &#34;03&#34;: &#34;Mar&#34;, &#34;04&#34;: &#34;Apr&#34;, &#34;05&#34;: &#34;May&#34;, &#34;06&#34;: &#34;Jun&#34;, &#34;07&#34;: &#34;Jul&#34;,
+              &#34;08&#34;: &#34;Aug&#34;, &#34;09&#34;: &#34;Sep&#34;, &#34;10&#34;: &#34;Oct&#34;, &#34;11&#34;: &#34;Nov&#34;, &#34;12&#34;: &#34;Dec&#34;}
+    day = date[:2]
+    m_dict = {i: j for i, j in zip(m_dict.values(), m_dict.keys())}
+    month = m_dict[date[3:6]]
+    year = date[7:11]
+    date = datetime.strptime(year + &#34;-&#34; + month + &#34;-&#34; + day, &#34;%Y-%m-%d&#34;)
+    return date.date()</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="mailutility.mailmonitor.MailMonitor.fetch_attachment"><code class="name flex">
+<span>def <span class="ident">fetch_attachment</span></span>(<span>self, uid: str) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>will fetch attachments for one mail</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>uid</code></strong> :&ensp;<code>str</code></dt>
+<dd>uid of mail</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code> of <code>file name : data as bytes</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fetch_attachment(self, uid: str) -&gt; dict:
+    &#34;&#34;&#34;
+    will fetch attachments for one mail
+
+    Parameters
+    ----------
+    uid: str
+        uid of mail
+
+    Returns
+    -------
+    dict of file name : data as bytes
+    &#34;&#34;&#34;
+    ret = {}
+    for part in email.message_from_string(
+            self.mailbox.uid(&#34;FETCH&#34;, uid, &#34;(BODY.PEEK[])&#34;)[1][0][1].decode(&#34;ascii&#34;)).walk():
+        if part.get_content_maintype() != &#34;multipart&#34;:
+            name = part.get_filename()
+            if name:
+                name = name.replace(&#34;\r&#34;, &#34;&#34;).replace(&#34;\n&#34;, &#34;&#34;)
+                data = part.get_payload(decode=True)
+                ret[name] = data
+    return ret</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.MailMonitor.fetch_one_mail"><code class="name flex">
+<span>def <span class="ident">fetch_one_mail</span></span>(<span>self, mode: str, save_dir: Union[str, pathlib.Path], state: str = 'ALL', subject: str = None, sender: str = None, body: str = None, date: Union[str, datetime.datetime, None] = None, mailbox: Union[str, List[str]] = 'INBOX') ‑> Union[bool, tuple]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Will fetch to attachments of a mail based on the date on arrival and the select mode</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>subject</code></strong> :&ensp;<code>str</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>sender</code></strong> :&ensp;<code>str</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>state</code></strong> :&ensp;<code>str (SEEN, UNSEEN, ALL)</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>date</code></strong> :&ensp;<code>Union[str, datetime]</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>mode</code></strong> :&ensp;<code>str (last, next, nearest, exact)</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>to_path</code></strong> :&ensp;<code>Union[Union["TransparentPath", Path, str], List[Union["TransparentPath", Path, str]]]</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>mailbox</code></strong> :&ensp;<code>Union[str, List[str]] = "INBOX"</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>overwrite</code></strong> :&ensp;<code>Union[bool, List[bool]] = None</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Union[bool, tuple]</code></dt>
+<dd>True and mail date if successful else False</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fetch_one_mail(self,
+                   mode: str,
+                   save_dir: Union[str, Path],
+                   state: str = &#34;ALL&#34;,
+                   subject: str = None,
+                   sender: str = None,
+                   body: str = None,
+                   date: Union[str, datetime, None] = None,
+                   mailbox: Union[str, List[str]] = &#34;INBOX&#34;,
+                   ) -&gt; Union[bool, tuple]:
+    &#34;&#34;&#34;
+
+    Will fetch to attachments of a mail based on the date on arrival and the select mode
+
+    Parameters
+    ----------
+    subject : str
+
+    sender : str
+
+    state : str (SEEN, UNSEEN, ALL)
+
+    date : Union[str, datetime]
+
+    mode : str (last, next, nearest, exact)
+
+    to_path : Union[Union[&#34;TransparentPath&#34;, Path, str], List[Union[&#34;TransparentPath&#34;, Path, str]]]
+
+    mailbox : Union[str, List[str]] = &#34;INBOX&#34;
+
+    overwrite : Union[bool, List[bool]] = None
+
+
+    Returns
+    -------
+    Union[bool, tuple]
+        True and mail date if successful else False
+    &#34;&#34;&#34;
+    self.open_connection()
+    self.mailbox.select(mailbox)
+    base_req = &#34;&#34;
+    if subject is not None:
+        for i in split_spec_char(subject):
+            base_req += f&#39;SUBJECT &#34;{i}&#34; &#39;
+    if sender is not None:
+        base_req += f&#34;FROM {sender} &#34;
+    if body is not None:
+        base_req += f&#34;BODY {body} &#34;
+    if state != &#34;ALL&#34;:
+        base_req += f&#34;({state})&#34;
+    if date is None:
+        base_req += f&#34;ON {self.configure_date(datetime.now())}&#34;
+    elif mode == &#34;last&#34;:
+        base_req += f&#34;BEFORE {self.configure_date(date)}&#34;
+    elif mode == &#34;next&#34;:
+        base_req += f&#34;SINCE {self.configure_date(date)}&#34;
+    elif mode == &#34;on&#34;:
+        base_req += f&#34;ON {self.configure_date(date)}&#34;
+    uids = self.mailbox.uid(&#34;SEARCH&#34;, None, base_req)[1]
+    uids = list(map(lambda x: str(x)[2:-1], uids))
+    uids = uids[0].split(&#34; &#34;)
+    if uids[0] == &#39;&#39;:
+        return False
+    dict_date = self.list_dates(uids, invert=True)
+    dates = list(dict_date.keys())
+    if date is None:
+        date = datetime.now().date()
+    elif isinstance(date, str):
+        date = datetime.strptime(date,&#34;%Y-%m-%d&#34;).date()
+    if mode == &#34;exact&#34;:
+        uid = dict_date.get(date, None)
+        if uid is None:
+            return False
+        uid = uid[0]
+    # TODO (Aducourthial): add time sensitivity
+    elif mode == &#34;next&#34;:
+        uid = dict_date[(lambda x, y: min(x, key=lambda i: abs(i - y) if i &lt; y else np.inf))(dates, date)][0]
+    elif mode == &#34;last&#34;:
+        uid = dict_date[(lambda x, y: min(x, key=lambda i: abs(i - y) if i &gt; y else np.inf))(dates, date)][0]
+    elif mode == &#34;nearest&#34;:
+        uid = dict_date[(lambda x, y: min(x, key=lambda i: abs(i - y)))(dates, date)][0]
+    else:
+        return False
+    bp = Path(save_dir)
+    if not bp.exists():
+        bp.mkdir()
+    for i, j in self.fetch_attachment(uid).items():
+        (bp / i).write_bytes(j)
+    return True, self.list_dates([uid])[uid]</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.MailMonitor.list_dates"><code class="name flex">
+<span>def <span class="ident">list_dates</span></span>(<span>self, uids: list, invert: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fetch intenal dates of list of uid
+base &gt; {uid : date}
+inverted &gt; {date : uids}</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>uids</code></strong> :&ensp;<code>list</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>invert</code></strong> :&ensp;<code>bool</code></dt>
+<dd>invert dict</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def list_dates(self, uids: list, invert: bool = False):
+    &#34;&#34;&#34;
+    fetch intenal dates of list of uid
+    base &gt; {uid : date}
+    inverted &gt; {date : uids}
+
+    Parameters
+    ----------
+    uids: list
+    invert : bool
+            invert dict
+
+    Returns
+    -------
+    dict
+    &#34;&#34;&#34;
+    ret = {}
+    for uid in uids:
+        msg = self.mailbox.uid(&#34;FETCH&#34;, uid, &#34;INTERNALDATE&#34;)
+        ret[uid] = self.read_date(msg[1][0].decode().split(&#39;&#34;&#39;)[-2][:11])
+    if invert:
+        bi = ret.copy()
+        ret = {}
+        for i, j in bi.items():
+            if j not in ret.keys():
+                ret[j] = [i]
+            else:
+                ret[j].append(i)
+    return ret</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.MailMonitor.monitor"><code class="name flex">
+<span>def <span class="ident">monitor</span></span>(<span>self, conditions: Union[dict, List[dict]], to_path: Union[ForwardRef('TransparentPath'), pathlib.Path, str, List[Union[ForwardRef('TransparentPath'), pathlib.Path, str]]], time_to_sleep: Union[int, List[int]] = 60, mailbox: Union[str, List[str]] = 'INBOX', overwrite: Union[bool, List[bool]] = None, timeout: int = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>conditions</code></strong> :&ensp;<code>Union[dict, List[dict]]</code></dt>
+<dd>The list of patterns to match for the mail to trigger. The keys
+for the dicts are:<pre><code>1: subject : a substring that must be containd in the email
+subject.
+
+2: subject_exact : the exact expected subject.
+
+3: sender : the sender email adress.
+</code></pre>
+</dd>
+<dt><strong><code>to_path</code></strong> :&ensp;<code>Union[Union[TransparentPath, Path, str], List[Union[TransparentPath, Path, str]]]</code></dt>
+<dd>Where to save the attatchment. If is not a list, will use the
+same path for all monitoring conditions.</dd>
+<dt><strong><code>time_to_sleep</code></strong> :&ensp;<code>Union[int, List[int]]</code></dt>
+<dd>The time between two mailbox checks (Default value = 60). If is
+not a list, will use the same time for all monitoring conditions.</dd>
+<dt><strong><code>mailbox</code></strong> :&ensp;<code>Union[str, List[str]]</code></dt>
+<dd>The mailbox to check. If is not a list, will use the same
+mailbox for all monitoring conditions. (Default value = "INBOX")</dd>
+<dt><strong><code>overwrite</code></strong> :&ensp;<code>Union[bool, List[bool]]</code></dt>
+<dd>If True, will overwrite any file with the same name. Else rename it
+appending to now's datetime. (Default value = self.overwrite)</dd>
+<dt><strong><code>timeout</code></strong> :&ensp;<code>int</code></dt>
+<dd>Time in seconds the monitor must remain up. None for infinite time (Default value = None)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def monitor(
+        self,
+        conditions: Union[dict, List[dict]],
+        to_path: Union[Union[&#34;TransparentPath&#34;, Path, str], List[Union[&#34;TransparentPath&#34;, Path, str]]],
+        time_to_sleep: Union[int, List[int]] = 60,
+        mailbox: Union[str, List[str]] = &#34;INBOX&#34;,
+        overwrite: Union[bool, List[bool]] = None,
+        timeout: int = None,
+) -&gt; None:
+    &#34;&#34;&#34;
+
+    Parameters
+    ----------
+    conditions: Union[dict, List[dict]]
+        The list of patterns to match for the mail to trigger. The keys
+        for the dicts are:
+
+            1: subject : a substring that must be containd in the email
+            subject.
+
+            2: subject_exact : the exact expected subject.
+
+            3: sender : the sender email adress.
+
+    to_path: Union[Union[TransparentPath, Path, str], List[Union[TransparentPath, Path, str]]]
+        Where to save the attatchment. If is not a list, will use the
+        same path for all monitoring conditions.
+
+    time_to_sleep: Union[int, List[int]]
+        The time between two mailbox checks (Default value = 60). If is
+        not a list, will use the same time for all monitoring conditions.
+
+    mailbox: Union[str, List[str]]
+        The mailbox to check. If is not a list, will use the same
+        mailbox for all monitoring conditions. (Default value = &#34;INBOX&#34;)
+
+    overwrite: Union[bool, List[bool]]
+        If True, will overwrite any file with the same name. Else rename it
+        appending to now&#39;s datetime. (Default value = self.overwrite)
+
+    timeout: int
+        Time in seconds the monitor must remain up. None for infinite time (Default value = None)
+
+    Returns
+    -------
+    None
+
+    &#34;&#34;&#34;
+
+    if overwrite is None:
+        overwrite = self.overwrite
+
+    if not isinstance(conditions, list):
+        conditions = [conditions]
+    if not isinstance(to_path, list):
+        to_path = [to_path] * len(conditions)
+    if not isinstance(time_to_sleep, list):
+        time_to_sleep = [time_to_sleep] * len(conditions)
+    if not isinstance(mailbox, list):
+        mailbox = [mailbox] * len(conditions)
+    if not isinstance(overwrite, list):
+        overwrite = [overwrite] * len(conditions)
+
+    if not len(conditions) == len(to_path):
+        raise ValueError(&#34;to_path and conditions must have same length&#34;)
+    if not len(conditions) == len(time_to_sleep):
+        raise ValueError(&#34;time_to_sleep and conditions must have same length&#34;)
+    if not len(conditions) == len(mailbox):
+        raise ValueError(&#34;mailbox and conditions must have same length&#34;)
+    theargs = []
+    for i in range(len(conditions)):
+        theargs.append((self, conditions[i], to_path[i], time_to_sleep[i], mailbox[i], overwrite[i], timeout))
+
+    print(&#34;Will start monitoring for new emails. You can stop the monitoring at any moment by pressing &#39;CTRL+C&#39;.&#34;)
+    if timeout is not None:
+        print(f&#34;Monitoring will remain up for {timeout} seconds then will shut down.&#34;)
+    for arg in theargs:
+        threading.Thread(target=MailMonitor._monitor, args=arg).start()</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.MailMonitor.open_connection"><code class="name flex">
+<span>def <span class="ident">open_connection</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def open_connection(self):
+    &#34;&#34;&#34; &#34;&#34;&#34;
+    # Connection to the server
+    talk = False
+    if self.mailbox is None:
+        print(f&#34;Connecting to {self.hostname} as {self.username}...&#34;)
+        talk = True
+    attempts = 0
+    while True:
+        attempts += 1
+        try:
+            self.mailbox = imaplib.IMAP4_SSL(self.hostname, self.port)
+            # Login to your account
+            self.mailbox.login(self.username, self.token)
+            self.mailbox.select()
+            if talk:
+                print(&#34;...successful&#34;)
+            break
+        except socket.gaierror as e:
+            print(f&#34;Failed more than {attempts} times. Raising the exception.&#34;)
+            if attempts &gt; 60:
+                raise e
+            else:
+                print(f&#34;Failed. Retrying for the {attempts}th time...&#34;)
+                sleep(1)</code></pre>
+</details>
+</dd>
+<dt id="mailutility.mailmonitor.MailMonitor.send"><code class="name flex">
+<span>def <span class="ident">send</span></span>(<span>self, msg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send(self, msg):
+    new_message = email.message.Message()
+    new_message[&#34;From&#34;] = f&#34;{self.username}@{MailMonitor.default_mail}&#34;
+    new_message[&#34;Subject&#34;] = &#34;MailMonitoring ended with Exception&#34;
+    new_message.set_payload(msg)
+    self.open_connection()
+    self.mailbox.append(
+        &#34;INBOX&#34;, &#34;&#34;, imaplib.Time2Internaldate(time()), str(new_message).encode(),
+    )
+    if not self.mailbox.state == &#34;LOGOUT&#34;:
+        self.mailbox.select()
+        self.mailbox.close()
+        self.mailbox.logout()
+    print(f&#34;Sent warning message to {self.username}@{MailMonitor.default_mail}&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="mailutility" href="index.html">mailutility</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="mailutility.mailmonitor.clean" href="#mailutility.mailmonitor.clean">clean</a></code></li>
+<li><code><a title="mailutility.mailmonitor.get_datetime_now" href="#mailutility.mailmonitor.get_datetime_now">get_datetime_now</a></code></li>
+<li><code><a title="mailutility.mailmonitor.overload_raise" href="#mailutility.mailmonitor.overload_raise">overload_raise</a></code></li>
+<li><code><a title="mailutility.mailmonitor.persist_file" href="#mailutility.mailmonitor.persist_file">persist_file</a></code></li>
+<li><code><a title="mailutility.mailmonitor.rename_file" href="#mailutility.mailmonitor.rename_file">rename_file</a></code></li>
+<li><code><a title="mailutility.mailmonitor.save_attachment" href="#mailutility.mailmonitor.save_attachment">save_attachment</a></code></li>
+<li><code><a title="mailutility.mailmonitor.split_spec_char" href="#mailutility.mailmonitor.split_spec_char">split_spec_char</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="mailutility.mailmonitor.MailException" href="#mailutility.mailmonitor.MailException">MailException</a></code></h4>
+</li>
+<li>
+<h4><code><a title="mailutility.mailmonitor.MailMonitor" href="#mailutility.mailmonitor.MailMonitor">MailMonitor</a></code></h4>
+<ul class="two-column">
+<li><code><a title="mailutility.mailmonitor.MailMonitor.accepted_conditions" href="#mailutility.mailmonitor.MailMonitor.accepted_conditions">accepted_conditions</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.configure_date" href="#mailutility.mailmonitor.MailMonitor.configure_date">configure_date</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.default_mail" href="#mailutility.mailmonitor.MailMonitor.default_mail">default_mail</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.fetch_attachment" href="#mailutility.mailmonitor.MailMonitor.fetch_attachment">fetch_attachment</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.fetch_one_mail" href="#mailutility.mailmonitor.MailMonitor.fetch_one_mail">fetch_one_mail</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.instances" href="#mailutility.mailmonitor.MailMonitor.instances">instances</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.list_dates" href="#mailutility.mailmonitor.MailMonitor.list_dates">list_dates</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.log" href="#mailutility.mailmonitor.MailMonitor.log">log</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.logger" href="#mailutility.mailmonitor.MailMonitor.logger">logger</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.monitor" href="#mailutility.mailmonitor.MailMonitor.monitor">monitor</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.open_connection" href="#mailutility.mailmonitor.MailMonitor.open_connection">open_connection</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.read_date" href="#mailutility.mailmonitor.MailMonitor.read_date">read_date</a></code></li>
+<li><code><a title="mailutility.mailmonitor.MailMonitor.send" href="#mailutility.mailmonitor.MailMonitor.send">send</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
